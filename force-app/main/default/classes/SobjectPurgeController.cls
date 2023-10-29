@@ -4,7 +4,8 @@ CreatedDate : 12-OCT-2023
 CreatedBy Name : Sachin Gaikwad
 Description : Handling the data communication between Apex and cmp_SobjectPurgeData LWC components. 
 Date           Developer Name    Description
-29-Oct-2023    Sachin Gaikwad    Adding comment for Git Push Demo.
+29-Oct-2023    Sachin Gaikwad    Adding comment for Git Push Demo Using UI.
+29-Oct-2023    Sachin Gaikwad    Adding comment for Git Push Demo USing Command.
 */
 
 
