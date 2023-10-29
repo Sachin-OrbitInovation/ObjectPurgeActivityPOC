@@ -1,0 +1,44 @@
+<template>
+    <template if:true={isParent}>
+    <div class="spinner">
+        <template if:true={isLoading}>
+             <lightning-spinner alternative-text="Loading" variant="brand" size="large">
+             </lightning-spinner>
+        </template>
+    </div>
+    <lightning-card
+            variant="narrow"
+            icon-name="standard:record_delete">
+        <h1 slot="title">Status</h1>
+        <lightning-layout multiple-rows>
+            <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="2"
+                padding="around-small">
+            <P> <b> Schedular Name :  {schedulerName} </b></P>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="2"
+            padding="around-small">
+            <P> <b> Schedular Status : {scheduleState}</b></P>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="2"
+            padding="around-small">
+            <P> <b> Schedular Next Schedule : {scheduleNextTime}</b> </P>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="2"
+                padding="around-small">
+                <P> <b> Schedular Created By : {scheduleCreatedBy}</b> </P>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="2"
+                padding="around-small">
+                <lightning-button class="slds-p-right_x-small" variant="success" label="Schedule" title="Successful action" onclick={handleScheduleClick} disabled={disabledRunBtn}></lightning-button>
+                <lightning-button variant="destructive" label="Unscheduled" title="Successful action" onclick={handleUnScheduleClick} disabled={disabledStopBtn}></lightning-button>
+                
+            </lightning-layout-item>
+            </lightning-layout>
+       
+     
+    </lightning-card>
+    </template>
+    <template if:true={isParent}>
+        
+    </template>
+</template>
