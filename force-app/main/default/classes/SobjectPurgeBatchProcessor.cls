@@ -42,6 +42,9 @@ global with sharing class SobjectPurgeBatchProcessor implements Database.Batchab
         //Need to add limit for child query if Limit_Query_Rows__c available.
         for(SobjectPurgeConfiguration__c sobj: sobjLst){
             String query = sobj.Query__c+' where '+sobj.SObject_API_Name__c+ ' IN: setRecordIds';
+            if(sobj.Limit_Query_Rows__c != null && sobj.Limit_Query_Rows__c >0){
+                query = query + ' LIMIT '+sobj.Limit_Query_Rows__c;
+            }
             System.debug('query for child'+query);
             sobjList = database.query(query);
             sobjMap.put(i,sobjList);
